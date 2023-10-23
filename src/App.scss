@@ -1,0 +1,124 @@
+@import "./scss/media-queries";
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 600px;
+  margin: 3rem auto;
+  background: #ffffff;
+  aspect-ratio: 16/9;
+  padding: 1rem;
+
+  @include sm {
+    padding: 1rem 1.75rem;
+  }
+
+  .header {
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 800;
+    text-transform: uppercase;
+  }
+
+  .form-container {
+    margin-top: 2rem;
+
+    .input-submit-btn {
+      display: flex;
+      align-items: center;
+      gap: 2px;
+
+      .todo-input {
+        flex: 1;
+        height: 44px;
+        border-radius: 2px;
+        outline: none;
+        padding: 0 0.875rem;
+        border: 1px solid #cdc9c9;
+
+        &::placeholder {
+          color: #aea8a8;
+        }
+
+        &:focus,
+        &:focus-within {
+          border: 1px solid #e9db0b;
+        }
+      }
+
+      .submit-todo-btn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 44px;
+        height: 44px;
+        background-color: #87ceeb;
+        color: #ffffff;
+        font-size: 1rem;
+        font-weight: 700;
+        border-radius: 2px;
+      }
+    }
+
+    .todos {
+      margin-top: 1rem;
+      border-top: 1px solid #e8e1e1b5;
+    }
+
+    .footer {
+      display: flex;
+      gap: 1rem;
+      flex-direction: column;
+      justify-content: space-between;
+      margin-top: 3rem;
+
+      .progress {
+        position: relative;
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.875rem;
+        min-height: 38px;
+        border: 1px solid #e0dadadc;
+
+        .progress-text {
+          z-index: 2;
+        }
+
+        .progress-bar {
+          position: absolute;
+          left: 0;
+          top: 0;
+          height: 100%;
+          background-color: #e9db0b;
+          transition: width 0.4s ease-in-out;
+        }
+
+        @include sm {
+          flex: none;
+          width: 250px;
+        }
+      }
+
+      .remove-checked {
+        height: 38px;
+        padding: 0 2rem;
+        background-color: #159ae7;
+        color: #ffffff;
+
+        &:disabled {
+          cursor: not-allowed;
+          background-color: #159ae796;
+        }
+      }
+
+      @include sm {
+        flex-direction: row;
+      }
+    }
+  }
+}

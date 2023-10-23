@@ -1,0 +1,33 @@
+@import "../../scss/media-queries";
+
+.todo-list-container {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid #e8e1e1b5;
+
+  .checkbox {
+    width: 1.3rem;
+    height: 1.3rem;
+  }
+
+  .todo-text {
+    flex: 1;
+    font-size: 0.875rem;
+  }
+
+  .todo-done-text {
+    text-decoration: line-through;
+  }
+
+  .action-btn {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+
+    &-btns {
+      cursor: pointer;
+    }
+  }
+}
